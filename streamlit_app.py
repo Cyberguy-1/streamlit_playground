@@ -27,6 +27,8 @@ def generate_response_pdf(uploaded_file, openai_api_key, query_text):
     # Select embeddings
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     # Create a vectorstore from documents
+    print(texts)
+    print(embeddings)
     db = Chroma.from_documents(texts, embeddings)
     # Create retriever interface
     retriever = db.as_retriever()
